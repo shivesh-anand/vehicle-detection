@@ -1,21 +1,23 @@
-Create Virtual Environment:
+#Backend Setup
+
+### 1. Create Virtual Environment:
 
 ```
 py -3 -m venv .venv
 ```
 
-Activate the Environment:
+### 2. Activate the Environment:
 
 ```
 py -3 -m venv .venv
 ```
 
-Install the required dependencies:
+### 3. Install the required dependencies:
 ```
 pip install -r requirements.txt
 ```
 
-Run the server code:
+### 4. Run the server code:
 ```
 python .\app5.py
 ```
