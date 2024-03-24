@@ -29,19 +29,19 @@ Before you begin, ensure you have met the following requirements:
 
 ### Navigate to the project directory:
 
-```bash
+```
 cd vehicle-detection
 ```
 1.  Navigate to the project directory:
 
-    bashCopy code
+    
 ```
     cd vehicle-detection
 ```
 
 2.  Install frontend dependencies:
 
-    bashCopy code
+    
 ```
     cd frontend
     npm install
@@ -49,7 +49,6 @@ cd vehicle-detection
 
 3.  Install backend dependencies:
 
-    bashCopy code
 ```
     cd ../backend
     pip install -r requirements.txt
@@ -60,7 +59,6 @@ Usage
 
 1.  Start the backend Flask server:
 
-    bashCopy code
 ```
     cd ../backend
     python app.py
@@ -69,7 +67,6 @@ Usage
 
 2.  Start the frontend Next.js server:
 
-    bashCopy code
 ```
     cd ../frontend
     npm run dev
@@ -87,13 +84,11 @@ You can also run the application using Docker. Follow these steps:
 
 1.  Build the Docker image:
 
-    bashCopy code
 ```
     docker-compose build
 ```
 2.  Start the Docker containers:
 
-    bashCopy code
 ```
     docker-compose up
 ```
