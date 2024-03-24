@@ -2,8 +2,6 @@
 
 A web application built with Next.js for the frontend and Flask for the backend, enabling users to upload images for vehicle detection and counting.
 
-![Screenshot](screenshot.png)
-
 ## Table of Contents
 
 - [Features](#features)
@@ -33,27 +31,29 @@ Before you begin, ensure you have met the following requirements:
 
 ```bash
 cd vehicle-detection
-git
 ```
 1.  Navigate to the project directory:
 
     bashCopy code
-
+```
     `cd vehicle-detection`
+```
 
 2.  Install frontend dependencies:
 
     bashCopy code
-
+```
     `cd frontend
     npm install`
+```
 
 3.  Install backend dependencies:
 
     bashCopy code
-
+```
     `cd ../backend
     pip install -r requirements.txt`
+```
 
 Usage
 -----
@@ -61,19 +61,19 @@ Usage
 1.  Start the backend Flask server:
 
     bashCopy code
-
+```
     `cd ../backend
     python app.py`
-
+```
     The server will start running at `http://localhost:8080`.
 
 2.  Start the frontend Next.js server:
 
     bashCopy code
-
+```
     `cd ../frontend
     npm run dev`
-
+```
     The frontend server will start running at `http://localhost:3000`.
 
 3.  Open your web browser and go to `http://localhost:3000` to access the application.
@@ -88,15 +88,15 @@ You can also run the application using Docker. Follow these steps:
 1.  Build the Docker image:
 
     bashCopy code
-
+```
     `docker-compose build`
-
+```
 2.  Start the Docker containers:
 
     bashCopy code
-
+```
     `docker-compose up`
-
+```
     The frontend will be accessible at `http://localhost:3000` and the backend at `http://localhost:8080`.
 
 Contributing
