@@ -43,7 +43,12 @@ export default function Home() {
     try {
       const response = await axios.post(
         'http://127.0.0.1:8080/detect',
-        formData
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
       );
 
       const data = response.data;
@@ -103,12 +108,7 @@ export default function Home() {
             </Button>
           </form>
         </div>
-        <Modal
-          isOpen={isOpen}
-          placement={modalPlacement}
-          onClose={onClose}
-          size="2xl"
-        >
+        <Modal isOpen={isOpen} placement="auto" onClose={onClose} size="2xl">
           <ModalContent>
             <ModalHeader className="flex flex-col gap-1">
               Image Details
