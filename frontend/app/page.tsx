@@ -14,7 +14,7 @@ import {
   CardHeader,
 } from '@nextui-org/react';
 import { title } from '@/components/primitives';
-import { Cardo } from 'next/font/google';
+import axios from 'axios';
 
 export default function Home() {
   const [carCount, setCarCount] = useState<number | null>(null);
@@ -35,22 +35,18 @@ export default function Home() {
       return;
     }
 
-    setLoading(true); // Set loading to true when submitting form
+    setLoading(true);
 
     const formData = new FormData(event.currentTarget);
     formData.append('image', selectedImage);
 
     try {
-      const response = await fetch('http://127.0.0.1:8080/detect', {
-        method: 'POST',
-        body: formData,
-      });
+      const response = await axios.post(
+        'http://127.0.0.1:8080/detect',
+        formData
+      );
 
-      if (!response.ok) {
-        throw new Error('An error occurred while processing the request.');
-      }
-
-      const data = await response.json();
+      const data = response.data;
       if (data.error) {
         throw new Error(data.error);
       } else {
@@ -58,18 +54,15 @@ export default function Home() {
         setTruckCount(data.vehicle_counts.truck);
         setBusCount(data.vehicle_counts.bus);
         setMotorcycleCount(data.vehicle_counts.motorcycle);
-        const fileUrl = `file:///${data.image_path}`;
-        setProcessedImage(fileUrl);
-        console.log(data.image_path);
+        setProcessedImage(data.image_path);
       }
     } catch (error) {
       console.error('Error:', error);
       alert((error as Error).message);
     } finally {
-      setLoading(false); // Set loading to false after request completes
+      setLoading(false);
     }
   };
-
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files && files.length > 0) {
@@ -154,7 +147,7 @@ export default function Home() {
                             <Image
                               isBlurred
                               isZoomed
-                              src={processedImage}
+                              src={URL.createObjectURL(selectedImage)}
                               alt="Processed"
                               width={300}
                             />
