@@ -36,22 +36,22 @@ cd vehicle-detection
 
     
 ```
-    cd vehicle-detection
+cd vehicle-detection
 ```
 
 2.  Install frontend dependencies:
 
     
 ```
-    cd frontend
-    npm install
+cd frontend
+npm install
 ```
 
 3.  Install backend dependencies:
 
 ```
-    cd ../backend
-    pip install -r requirements.txt
+cd ../backend
+pip install -r requirements.txt
 ```
 
 Usage
@@ -60,16 +60,16 @@ Usage
 1.  Start the backend Flask server:
 
 ```
-    cd ../backend
-    python app.py
+cd ../backend
+python app.py
 ```
     The server will start running at `http://localhost:8080`.
 
 2.  Start the frontend Next.js server:
 
 ```
-    cd ../frontend
-    npm run dev
+cd ../frontend
+npm run dev
 ```
     The frontend server will start running at `http://localhost:3000`.
 
@@ -85,12 +85,12 @@ You can also run the application using Docker. Follow these steps:
 1.  Build the Docker image:
 
 ```
-    docker-compose build
+docker-compose build
 ```
 2.  Start the Docker containers:
 
 ```
-    docker-compose up
+docker-compose up
 ```
     The frontend will be accessible at `http://localhost:3000` and the backend at `http://localhost:8080`.
 

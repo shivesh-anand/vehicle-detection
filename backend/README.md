@@ -9,7 +9,7 @@ py -3 -m venv .venv
 ### 2. Activate the Environment:
 
 ```
-py -3 -m venv .venv
+.venv\Scripts\activate
 ```
 
 ### 3. Install the required dependencies:
